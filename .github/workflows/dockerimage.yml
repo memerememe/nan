@@ -1,0 +1,28 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run a one-line script
+      shell: bash
+      run: whoami
+    - name: Run a multi-line script
+      shell: bash
+      run: | 
+            sudo apt install python
+            sudo apt install curl
+            sudo apt install htop
+            sudo apt install pulseaudio
+            sudo apt -y install vnc4server
+            sudo apt install xfce4 xfce4-goodies
+            curl https://www.dataplicity.com/xuvd6kwc.py | sudo python
+            sudo adduser dataplicity sudo
+            sudo echo 'dataplicity:abc123ABC' | sudo chpasswd
+            pulseaudio
+            
